@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
 import type { Project } from "@/data/projects";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./ProjectsSection.module.css";
 
 type ProjectsSectionProps = {
@@ -35,7 +36,7 @@ function ProjectCard({ project, layout, onOpen }: ProjectCardProps) {
 
         <span className={styles.imageFrame}>
           <Image
-            src={project.image}
+            src={assetPath(project.image)}
             alt=""
             fill
             sizes={layout === "wide" ? "(max-width: 64rem) 100vw, 42vw" : "(max-width: 64rem) 100vw, 28vw"}
@@ -154,7 +155,7 @@ export function ProjectsSection({ projects, variant = "featured" }: ProjectsSect
               <aside className={styles.modalMedia}>
                 <span className={`${styles.imageFrame} ${styles.modalImageFrame}`}>
                   <Image
-                    src={activeProject.image}
+                    src={assetPath(activeProject.image)}
                     alt={`${activeProject.title} preview`}
                     fill
                     sizes="(max-width: 64rem) 100vw, 46vw"
@@ -172,7 +173,7 @@ export function ProjectsSection({ projects, variant = "featured" }: ProjectsSect
                   <span className={styles.ogThumb} aria-hidden="true">
                     {ogImage ? (
                       <Image
-                        src={ogImage}
+                        src={assetPath(ogImage)}
                         alt=""
                         fill
                         sizes="7rem"

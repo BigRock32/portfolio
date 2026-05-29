@@ -35,9 +35,9 @@ export function Header() {
         </Link>
         <nav className={styles.nav} aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a key={item.label} href={item.href}>
+            <Link key={item.label} href={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

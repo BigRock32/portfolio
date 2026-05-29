@@ -6,6 +6,7 @@ import { Icon, type IconName } from "@/components/Icon";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import ogCache from "@/data/og-cache.json";
 import { projects, type Project } from "@/data/projects";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./page.module.css";
 
 const socials: Array<{ label: string; value: string; href: string; icon: IconName }> = [
@@ -75,7 +76,7 @@ export default function Home() {
 
               <div className={styles.heroIllustration} aria-hidden="true">
                 <Image
-                  src="/hero-illustration-transparent.png"
+                  src={assetPath("/hero-illustration-transparent.png")}
                   alt=""
                   width={434}
                   height={434}
@@ -152,7 +153,10 @@ export default function Home() {
 
         <section className={`${styles.section} ${styles.cta}`} id="contacts">
           <div className={styles.container}>
-            <div className={styles.ctaPanel}>
+            <div
+              className={styles.ctaPanel}
+              style={{ backgroundImage: `url("${assetPath("/cta-background.png")}")` }}
+            >
               <p>Available for work</p>
               <h2>Need a polished Webflow build or frontend support?</h2>
               <p>
