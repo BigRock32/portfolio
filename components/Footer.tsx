@@ -27,7 +27,7 @@ export function Footer() {
               <Link href="/#about">About</Link>
               <Link href="/#about">Stack</Link>
               <Link href="/#projects">Projects</Link>
-              <Link href="/#contacts">Contscts</Link>
+              <Link href="/#contacts">Contacts</Link>
             </nav>
             <a className={styles.footerCircle} href="#" aria-label="Back to top">
               <Icon name="arrow-up" />
