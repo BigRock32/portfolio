@@ -5,8 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const repo = "portfolio";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -16,12 +15,12 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repo}` : "",
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
-  ...(isGithubActions
+  ...(basePath
     ? {
-        basePath: `/${repo}`,
-        assetPrefix: `/${repo}/`,
+        basePath,
+        assetPrefix: `${basePath}/`,
       }
     : {}),
 };
