@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { assetPath } from "@/lib/assetPath";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="pageBackground" aria-hidden="true" />
+        <div
+          className="pageBackground"
+          style={{ backgroundImage: `url("${assetPath("/hero-background.jpg")}")` }}
+          aria-hidden="true"
+        />
         {children}
       </body>
     </html>

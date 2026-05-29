@@ -1,4 +1,5 @@
 import Image, { type ImageProps } from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 export type IconName =
   | "arrow-circle-up-right"
@@ -43,7 +44,7 @@ export function Icon({ name, alt = "", ...props }: IconProps) {
       aria-hidden={alt ? undefined : true}
       draggable={false}
       height={24}
-      src={iconSources[name]}
+      src={assetPath(iconSources[name])}
       unoptimized
       width={24}
       {...props}

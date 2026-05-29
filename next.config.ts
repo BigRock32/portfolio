@@ -15,11 +15,14 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repo}` : "",
+  },
   ...(isGithubActions
     ? {
-      basePath: `/${repo}`,
-      assetPrefix: `/${repo}/`,
-    }
+        basePath: `/${repo}`,
+        assetPrefix: `/${repo}/`,
+      }
     : {}),
 };
 
