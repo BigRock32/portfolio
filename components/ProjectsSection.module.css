@@ -1,0 +1,558 @@
+.section {
+  position: relative;
+  background: transparent;
+}
+
+.featured {
+  padding-top: 3.25rem;
+}
+
+.allProjects {
+  padding: 8.75rem 0 4rem;
+}
+
+.container {
+  width: min(100% - 10rem, var(--container));
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.header p {
+  max-width: 32rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.archiveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  min-width: 0;
+}
+
+.featuredGrid .cardWide {
+  grid-column: span 3;
+}
+
+.featuredGrid .cardCompact {
+  grid-column: span 2;
+}
+
+.cardButton {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 1.75rem;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.cardButton:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 1.5rem 4rem rgba(26, 26, 26, 0.18);
+  transform: translateY(-0.125rem);
+}
+
+.stackPreview,
+.modalStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stackPreview span,
+.modalStack li {
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.25rem 0.75rem;
+  color: #aeaeb2;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+.imageFrame {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--surface-muted);
+}
+
+.cardWide .imageFrame,
+.cardCompact .imageFrame {
+  height: 11.1875rem;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardText {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.cardTitleRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cardTitleRow strong {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.cardSummary {
+  color: #aeaeb2;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.viewButton {
+  display: inline-flex;
+  width: 3.5rem;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.12);
+  color: #aeaeb2;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.14;
+}
+
+.viewButton img {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 160ms ease;
+}
+
+.cardButton:hover .viewButton img {
+  transform: translateX(0.125rem);
+}
+
+.cardCompact .cardTitleRow strong {
+  font-size: 2rem;
+}
+
+.cardCompact .cardSummary {
+  font-size: 1.25rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  overflow-y: auto;
+  background: rgba(26, 26, 26, 0.42);
+  padding: 1.25rem;
+}
+
+.modal {
+  display: flex;
+  width: min(100%, 78rem);
+  height: calc(100dvh - 2.5rem);
+  max-height: calc(100dvh - 2.5rem);
+  flex-direction: column;
+  overflow: hidden;
+  border: 0.0625rem solid var(--line);
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 1.5rem 5rem rgba(26, 26, 26, 0.22);
+}
+
+.modalTop {
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 0.0625rem solid var(--line);
+  background: #ffffff;
+  padding: 1.5rem;
+}
+
+.modalTop p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.closeButton {
+  display: inline-grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  color: var(--text);
+  font-size: 2rem;
+  line-height: 1;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.closeButton:hover {
+  border-color: var(--line-strong);
+  background: #f7f7f7;
+}
+
+.modalGrid {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 2rem;
+  min-height: 0;
+  overflow: hidden;
+  padding: 1.75rem;
+}
+
+.modalMedia {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-height: 0;
+  max-height: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 0.25rem 1rem 0;
+  scrollbar-width: thin;
+}
+
+.modalImageFrame {
+  flex: 0 0 auto;
+  height: auto;
+  aspect-ratio: 1.18;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 0.4rem 1rem 0;
+  scrollbar-width: thin;
+}
+
+.modalContent h3 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.modalContent p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.38;
+}
+
+.detailBlock {
+  display: grid;
+  gap: 0.75rem;
+  border-top: 0.0625rem solid var(--line);
+  padding-top: 1rem;
+}
+
+.detailBlock h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.modalStack {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modalStack li {
+  background: rgba(120, 120, 120, 0.04);
+  color: var(--muted);
+}
+
+.ogPreview {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: var(--radius);
+  background: #f7f7f7;
+  padding: 0.75rem;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.ogPreview:hover {
+  border-color: rgba(26, 26, 26, 0.35);
+  background: #ffffff;
+}
+
+.ogThumb {
+  position: relative;
+  width: 7rem;
+  height: 4.4rem;
+  overflow: hidden;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.375rem;
+  background:
+    linear-gradient(135deg, rgba(26, 26, 26, 0.05), rgba(114, 114, 114, 0.08)),
+    repeating-linear-gradient(0deg, #ffffff 0 0.45rem, #f2f2f2 0.45rem 0.9rem);
+}
+
+.ogImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ogPreview strong,
+.ogPreview small,
+.ogPreview em {
+  display: block;
+}
+
+.ogPreview strong {
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.ogPreview small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.ogPreview em {
+  margin-top: 0.35rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .featuredGrid,
+  .archiveGrid,
+  .modalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredGrid .cardWide,
+  .featuredGrid .cardCompact {
+    grid-column: auto;
+  }
+
+  .modal {
+    height: auto;
+    flex: 0 0 auto;
+    overflow-y: auto;
+  }
+
+  .modalGrid {
+    display: block;
+    flex: 0 0 auto;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .modalMedia {
+    position: static;
+    display: flex;
+    max-height: none;
+    min-height: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .modalContent {
+    max-height: none;
+    min-height: auto;
+    overflow: visible;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 1.25rem, var(--container));
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cardButton {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  .cardWide .imageFrame,
+  .cardCompact .imageFrame {
+    height: 9rem;
+  }
+
+  .cardTitleRow strong,
+  .cardCompact .cardTitleRow strong {
+    font-size: 1.55rem;
+  }
+
+  .cardSummary,
+  .cardCompact .cardSummary {
+    font-size: 1rem;
+  }
+
+  .overlay {
+    align-items: start;
+    padding: 0.65rem;
+  }
+
+  .modal {
+    max-height: calc(100dvh - 1.3rem);
+    border-radius: 1rem;
+  }
+
+  .modalTop,
+  .modalGrid {
+    padding: 1rem;
+  }
+
+  .modalTop {
+    position: sticky;
+    top: 0;
+  }
+
+  .modalMedia {
+    margin-bottom: 1.25rem;
+  }
+
+  .modalImageFrame {
+    aspect-ratio: 1.16;
+  }
+
+  .modalContent {
+    gap: 1rem;
+  }
+
+  .modalContent h3 {
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .modalContent p {
+    font-size: 1rem;
+  }
+
+  .ogPreview {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .ogThumb {
+    width: 100%;
+    height: 5rem;
+  }
+
+  .ogPreview strong {
+    font-size: 1rem;
+  }
+
+  .ogPreview small,
+  .ogPreview em {
+    font-size: 0.875rem;
+  }
+}

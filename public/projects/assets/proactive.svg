@@ -1,0 +1,15 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#071126"/>
+  <rect x="120" y="92" width="960" height="576" rx="18" fill="#0A1328"/>
+  <path d="M120 538c142 0 214 46 282 130H120V538Z" fill="#DD563E"/>
+  <path d="M876 92c70 36 132 50 204 50V92H876Z" fill="#DD563E"/>
+  <rect x="664" y="260" width="160" height="318" rx="38" fill="#151A22"/>
+  <rect x="786" y="320" width="148" height="284" rx="34" fill="#242A31"/>
+  <rect x="806" y="382" width="106" height="42" rx="4" fill="#DD563E"/>
+  <rect x="806" y="452" width="94" height="12" rx="4" fill="#FFFFFF"/>
+  <rect x="806" y="484" width="72" height="12" rx="4" fill="#AAB0BA"/>
+  <path d="M230 192h86l34 34-34 34h-86l-34-34 34-34Z" stroke="#DD563E" stroke-width="18" stroke-linejoin="round"/>
+  <text x="208" y="356" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700">Fire safety</text>
+  <text x="208" y="422" fill="#DD563E" font-family="Arial, sans-serif" font-size="48" font-weight="700">company</text>
+  <text x="208" y="500" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="28">Webflow development</text>
+</svg>

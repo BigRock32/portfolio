@@ -1,0 +1,104 @@
+{
+  "dune": {
+    "title": "AI-Driven User Risk Management - Dune Security",
+    "description": "Prevent phishing, smishing & insider threats with AI-driven user risk scoring, adaptive training, and real-time security enforcement.",
+    "url": "dune.security",
+    "image": "https://cdn.prod.website-files.com/67f91a416272c7432bc1ac28/6808deaf18e9d80105f7198c_Open%20Graph.png",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:34:59.785Z"
+  },
+  "flower-ai": {
+    "title": "Flower AI",
+    "url": "floweraipeople.com",
+    "image": "/projects/assets/flowerai.png",
+    "status": "missing-og-image",
+    "fetchedAt": "2026-05-08T08:35:04.567Z"
+  },
+  "sdi": {
+    "title": "IT Modernization & Managed Services Provider | SDI Presence",
+    "description": "SDI Presence delivers managed IT solutions, infrastructure modernization, and strategic consulting for government, utilities, and enterprise organizations nationwide.",
+    "url": "sdipresence.com",
+    "image": "https://cdn.prod.website-files.com/685c045f09a3dab41aa0d71d/6895e4914575b3dc37158eff_Open%20graph.avif",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:06.984Z"
+  },
+  "bd-emerson": {
+    "title": "BD Emerson: Trusted Cyber Security Services Provider",
+    "description": "BD Emerson is a cybersecurity services company providing consulting and compliance support for businesses. 15+ years of experience. Certified experts.",
+    "url": "bdemerson.com",
+    "image": "https://cdn.prod.website-files.com/68ca67757e9fd3f4956e1305/693c018e69094ae28be8e406_open%20graph%20image.png",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:10.240Z"
+  },
+  "dron-show-software": {
+    "title": "Drone Show Software: The #1 Solution for Drone Light Shows",
+    "description": "Create and manage stunning drone light shows with our industry-leading Drone Show Software. Animate, synchronize, and fly your drone fleet with ease. Request a demo!",
+    "url": "droneshowsoftware.com",
+    "image": "https://cdn.prod.website-files.com/65a93bad4be2b6b1e1bf1670/65f1d8f4efc431f6032dc665_Drone-Show-Software-start-yourdrone-show-business.png",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:15.023Z"
+  },
+  "jonnydo": {
+    "title": "JonnyDo",
+    "url": "jonnydo.com",
+    "image": "https://cdn.prod.website-files.com/679a36d2f082ceddc1352a97/67b420829cd29a4f7830e41a_JonnyDo_opengraph.avif",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:17.144Z"
+  },
+  "global-fast-track": {
+    "image": "/projects/assets/gft.png",
+    "status": "TypeError"
+  },
+  "hh-fintech-week": {
+    "title": "Hong Kong FinTech Week x StartmeupHK | November 2-6, 2026",
+    "description": "Register now for Asia's flagship conference and join 45,000+ global leaders, C-suite executives, and regulators to explore fintech, AI, Web3, and more.",
+    "url": "fintechweek.hk",
+    "image": "https://cdn.prod.website-files.com/660eae4bcbb1b344fa24b619/69aa5ae79f95910f53678e41_hkftw-2026-eng-1200x630.png",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:30.561Z"
+  },
+  "lingo": {
+    "title": "LINGO - сервис генерации текстов для маркетплейсов",
+    "description": "Cервис генерации текстов для маркетплейсов",
+    "url": "lingoai.ru",
+    "image": "/projects/assets/lingo.png",
+    "status": "missing-og-image",
+    "fetchedAt": "2026-05-08T08:35:34.833Z"
+  },
+  "newshift": {
+    "image": "/projects/assets/newshift.svg",
+    "status": "skipped-placeholder-url"
+  },
+  "kt-team": {
+    "title": "Оптимизация и автоматизация бизнес-процессов с KT.Team",
+    "description": "Компания KT.Team — системный интегратор ИТ, специализируется на оптимизации, автоматизации и улучшении бизнес-процессов для среднего и крупного бизнеса.",
+    "url": "kt-team.ru",
+    "image": "https://cdn.prod.website-files.com/641ad4b420e25da42f53cbde/643eb7a9dac1420dfcea0d6a_home.webp",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:37.366Z"
+  },
+  "bothelp": {
+    "title": "The ultimate tool to build chatbots and automate communication on the world’s most popular messaging platforms",
+    "description": "Powerful marketing tool to build a Messenger bot, broadcast messages and automate sales. Acquire customers and generate more leads via Facebook Messenger*.",
+    "url": "bothelp.io",
+    "image": "https://bothelp.io/wp-content/uploads/2025/12/60da06199685cc82ac9c41e4_og-img-en.jpg",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:39.252Z"
+  },
+  "greenway": {
+    "title": "Greenway – Таможенный брокер и оператор ВЭД | Оформление и сопровождение ВЭД услуг под ключ",
+    "description": "Greenway – ваш надежный таможенный брокер с более чем 20-летним опытом на рынке. Полный комплекс услуг ВЭД: таможенное оформление, логистика, сертификация, сопровождение сделок. Оперативно, профессионально и с гарантией юридической чистоты.",
+    "url": "greenway.ru",
+    "image": "https://static.tildacdn.com/tild6634-3064-4130-a164-396630303362/photo.png",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:40.788Z"
+  },
+  "proactive-fire-safety": {
+    "title": "Пожарные и Охранные сиcтемы защиты в Санкт - Петербурге| Компания",
+    "description": "Компания «Проактив Безопасность» выполняет полный комплекс работ и услуг в сфере охранных систем и пожарной безопасности.",
+    "url": "stu.proaktive.ru",
+    "image": "http://stu.proaktive.ru/wp-content/uploads/2021/10/favikon-1.png",
+    "status": "ok",
+    "fetchedAt": "2026-05-08T08:35:43.815Z"
+  }
+}

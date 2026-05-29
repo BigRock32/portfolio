@@ -1,0 +1,15 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#151414"/>
+  <rect x="96" y="88" width="1008" height="584" rx="8" fill="#211F1E" stroke="#4A4237" stroke-width="2"/>
+  <rect x="156" y="148" width="888" height="464" rx="6" fill="#0F0F0E"/>
+  <rect x="212" y="204" width="274" height="34" rx="4" fill="#F4C430"/>
+  <rect x="212" y="268" width="410" height="18" rx="4" fill="#FFFFFF"/>
+  <rect x="212" y="302" width="330" height="18" rx="4" fill="#A8A39A"/>
+  <rect x="212" y="374" width="150" height="46" rx="6" fill="#F4C430"/>
+  <circle cx="790" cy="376" r="126" fill="#6F4BF1"/>
+  <circle cx="790" cy="376" r="84" fill="#F4C430"/>
+  <rect x="690" y="356" width="200" height="110" rx="8" fill="#FFFFFF"/>
+  <rect x="726" y="388" width="128" height="16" rx="4" fill="#211F1E"/>
+  <rect x="726" y="426" width="86" height="12" rx="4" fill="#A8A39A"/>
+  <text x="212" y="558" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="56" font-weight="700">NewShift</text>
+</svg>

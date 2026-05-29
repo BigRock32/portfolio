@@ -1,0 +1,247 @@
+.container {
+  width: min(100% - 10rem, var(--container));
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 3.25rem 0 1.5rem;
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: minmax(0, 27.9375rem) minmax(0, 35.5625rem);
+  gap: 2rem;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.footerTop h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 3.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.footerTop p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.28;
+}
+
+.footerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12.375rem;
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.footerNav a {
+  font-size: 1rem;
+  line-height: 1.25;
+  transition: color 160ms ease;
+}
+
+.footerNav a:hover {
+  color: var(--muted);
+}
+
+.footerCircle {
+  display: inline-grid;
+  width: 5rem;
+  height: 5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  transition: transform 160ms ease;
+}
+
+.footerCircle:hover {
+  transform: translateY(-0.0625rem);
+}
+
+.footerCircle img {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.footerContact {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.footerSchedule {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footerScheduleLink {
+  display: inline-flex;
+  min-width: 17.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.125rem solid rgba(26, 26, 26, 0.72);
+  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.28;
+}
+
+.footerScheduleIcon {
+  display: inline-grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #000000;
+  color: #ffffff;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.footerScheduleIcon:hover {
+  background: #2d2d2d;
+  transform: translateY(-0.0625rem);
+}
+
+.footerScheduleIcon img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.footerLine {
+  min-width: 0;
+}
+
+.footerSocials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footerSocials a {
+  display: inline-grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: 0.5rem;
+  background: var(--text);
+  color: #ffffff;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.footerSocials a:hover {
+  background: #2d2d2d;
+  transform: translateY(-0.0625rem);
+}
+
+.footerSocials img {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.footerSocials .footerGoogleIcon {
+  width: 1.6875rem;
+  height: 1.6875rem;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.14;
+}
+
+.footerBottom a {
+  text-decoration: underline;
+}
+
+.footerBottom > span:nth-child(2) {
+  text-align: center;
+}
+
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.legalLinks a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .footerTop,
+  .footerContact {
+    grid-template-columns: 1fr;
+  }
+
+  .footerActions,
+  .footerNav {
+    justify-content: flex-start;
+  }
+
+  .footerActions {
+    gap: 1.5rem;
+  }
+
+  .footerLine {
+    display: none;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerBottom,
+  .footerBottom > span:nth-child(2),
+  .legalLinks {
+    text-align: left;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 1.25rem, var(--container));
+  }
+
+  .footerCircle {
+    display: none;
+  }
+
+  .footerActions,
+  .footerSchedule {
+    align-items: center;
+  }
+
+  .footerScheduleLink {
+    min-width: 0;
+  }
+}

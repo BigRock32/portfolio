@@ -1,0 +1,12 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#E9F0E2"/>
+  <rect x="96" y="82" width="1008" height="596" rx="8" fill="#D8E7D0"/>
+  <rect x="150" y="120" width="900" height="520" rx="8" fill="#26343A"/>
+  <rect x="188" y="158" width="824" height="444" rx="4" fill="#88A5B0"/>
+  <path d="M188 442c110-84 203-112 312-62 136 62 216 36 326-28 72-42 128-52 186-30v280H188V442Z" fill="#6E8E96"/>
+  <path d="M602 426c92-34 172-36 250 2" stroke="#32434A" stroke-width="26" stroke-linecap="round"/>
+  <path d="M632 444h236" stroke="#1D2A30" stroke-width="72" stroke-linecap="round"/>
+  <rect x="248" y="482" width="206" height="48" rx="6" fill="#6FB572"/>
+  <text x="246" y="230" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="64" font-weight="700">Greenway</text>
+  <text x="246" y="296" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="32" font-weight="700">International logistics</text>
+</svg>

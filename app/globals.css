@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;600&family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f5f5f5;
+  --surface-strong: #eeeeee;
+  --text: #181818;
+  --muted: #727272;
+  --muted-strong: #3c3c43;
+  --line: rgba(114, 114, 114, 0.2);
+  --line-strong: rgba(26, 26, 26, 0.45);
+  --accent: #1a1a1a;
+  --accent-dark: #000000;
+  --accent-soft: #eeeeee;
+  --focus: #1a1a1a;
+  --shadow: 0 1.5rem 4rem rgba(26, 26, 26, 0.08);
+  --radius: 0.5rem;
+  --container: 84.5rem;
+  --font-display: "Funnel Display", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Open Sans", Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #ffffff;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 480.02px) and (max-width: 1512px) {
+  html {
+    font-size: calc(16 * (100vw / 1512));
+  }
+}
+
+@media (min-width: 1800px) {
+  html {
+    font-size: calc(16 * (100vw / 1800));
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.pageBackground {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/hero-background.jpg");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.25;
+}
+
+body > main {
+  position: relative;
+  z-index: 1;
+}
+
+section[id] {
+  scroll-margin-top: 6.25rem;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open > header {
+  z-index: 0;
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+:focus-visible {
+  outline: 0.1875rem solid var(--focus);
+  outline-offset: 0.1875rem;
+}
