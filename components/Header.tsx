@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./Header.module.css";
 
 const navItems = [
@@ -35,9 +36,9 @@ export function Header() {
         </Link>
         <nav className={styles.nav} aria-label="Primary navigation">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href}>
+            <a key={item.label} href={assetPath(item.href)}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>

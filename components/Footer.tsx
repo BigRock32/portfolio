@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Icon, type IconName } from "@/components/Icon";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./Footer.module.css";
 
 const socials: Array<{ label: string; href: string; icon: IconName }> = [
@@ -24,10 +24,10 @@ export function Footer() {
           </div>
           <div className={styles.footerActions}>
             <nav className={styles.footerNav} aria-label="Footer navigation">
-              <Link href="/#about">About</Link>
-              <Link href="/#about">Stack</Link>
-              <Link href="/#projects">Projects</Link>
-              <Link href="/#contacts">Contacts</Link>
+              <a href={assetPath("/#about")}>About</a>
+              <a href={assetPath("/#about")}>Stack</a>
+              <a href={assetPath("/#projects")}>Projects</a>
+              <a href={assetPath("/#contacts")}>Contacts</a>
             </nav>
             <a className={styles.footerCircle} href="#" aria-label="Back to top">
               <Icon name="arrow-up" />
