@@ -24,9 +24,8 @@ export function Footer() {
           </div>
           <div className={styles.footerActions}>
             <nav className={styles.footerNav} aria-label="Footer navigation">
-              <a href={assetPath("/#about")}>About</a>
-              <a href={assetPath("/#about")}>Stack</a>
               <a href={assetPath("/#projects")}>Projects</a>
+              <a href={assetPath("/#about")}>About</a>
               <a href={assetPath("/#contacts")}>Contacts</a>
             </nav>
             <a className={styles.footerCircle} href="#" aria-label="Back to top">

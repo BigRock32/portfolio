@@ -6,10 +6,9 @@ import { assetPath } from "@/lib/assetPath";
 import styles from "./Header.module.css";
 
 const navItems = [
-  { label: "About", href: "/#about" },
-  { label: "Stack", href: "/#about" },
   { label: "Projects", href: "/#projects" },
-  { label: "Contscts", href: "/#contacts" },
+  { label: "About", href: "/#about" },
+  { label: "Contacts", href: "/#contacts" },
 ];
 
 export function Header() {
