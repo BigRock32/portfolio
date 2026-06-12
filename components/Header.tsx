@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 import styles from "./Header.module.css";
 
 const navItems = [
-  { label: "About", href: "/#about" },
-  { label: "Stack", href: "/#about" },
   { label: "Projects", href: "/#projects" },
-  { label: "Contscts", href: "/#contacts" },
+  { label: "About", href: "/#about" },
+  { label: "Contacts", href: "/#contacts" },
 ];
 
 export function Header() {
@@ -35,9 +35,9 @@ export function Header() {
         </Link>
         <nav className={styles.nav} aria-label="Primary navigation">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href}>
+            <a key={item.label} href={assetPath(item.href)}>
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>
