@@ -59,14 +59,13 @@ export default function Home() {
                 </p>
                 <div className={styles.actions} aria-label="Primary actions">
                   <Button href="mailto:vasya.samarin.00@gmail.com" minWidth="6.75rem" variant="primary">
-                    Hire me
+                    Get in touch
                   </Button>
                   <Button
-                    href="https://www.linkedin.com/in/vasilii-samarin-6a4184254"
+                    href={assetPath("/cv/vasilii-samarin-cv.pdf")}
                     icon={<Icon name="download" />}
-                    minWidth="11.5625rem"
                     target="_blank"
-                    rel="noreferrer"
+                    minWidth="11.5625rem"
                     variant="secondary"
                   >
                     Download CV
