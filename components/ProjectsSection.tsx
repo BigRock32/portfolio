@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
 import type { Project } from "@/data/projects";
@@ -61,6 +62,7 @@ function ProjectCard({ project, layout, onOpen }: ProjectCardProps) {
 
 export function ProjectsSection({ projects, variant = "featured" }: ProjectsSectionProps) {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const isFeatured = variant === "featured";
@@ -73,6 +75,10 @@ export function ProjectsSection({ projects, variant = "featured" }: ProjectsSect
   const closeProject = () => {
     setActiveProject(null);
   };
+
+  useEffect(() => {
+    setPortalElement(document.body);
+  }, []);
 
   useEffect(() => {
     if (!activeProject) {
@@ -99,6 +105,108 @@ export function ProjectsSection({ projects, variant = "featured" }: ProjectsSect
   }, [activeProject]);
 
   const ogImage = activeProject?.og.image ?? activeProject?.image;
+  const modal =
+    activeProject && portalElement
+      ? createPortal(
+          <div className={styles.overlay} onMouseDown={closeProject}>
+            <div
+              className={styles.modal}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+              onMouseDown={(event) => event.stopPropagation()}
+            >
+              <div className={styles.modalTop}>
+                <p>Project detail</p>
+                <button
+                  ref={closeButtonRef}
+                  className={styles.closeButton}
+                  type="button"
+                  onClick={closeProject}
+                  aria-label="Close project details"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+
+              <div className={styles.modalGrid}>
+                <aside className={styles.modalMedia}>
+                  <span className={`${styles.imageFrame} ${styles.modalImageFrame}`}>
+                    <Image
+                      src={assetPath(activeProject.image)}
+                      alt={`${activeProject.title} preview`}
+                      fill
+                      sizes="(max-width: 64rem) 100vw, 46vw"
+                      className={styles.modalImage}
+                      unoptimized
+                    />
+                  </span>
+                  <a
+                    className={styles.ogPreview}
+                    href={activeProject.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${activeProject.title}`}
+                  >
+                    <span className={styles.ogThumb} aria-hidden="true">
+                      {ogImage ? (
+                        <Image
+                          src={assetPath(ogImage)}
+                          alt=""
+                          fill
+                          sizes="7rem"
+                          className={styles.ogImage}
+                          unoptimized
+                        />
+                      ) : null}
+                    </span>
+                    <span>
+                      <strong>{activeProject.og.title}</strong>
+                      <small>{activeProject.og.description}</small>
+                      <em>{activeProject.og.url}</em>
+                    </span>
+                  </a>
+                </aside>
+
+                <div className={styles.modalContent}>
+                  <h3 id="project-modal-title">{activeProject.title}</h3>
+                  <p>{activeProject.description}</p>
+
+                  <div className={styles.detailBlock}>
+                    <h4>Stack</h4>
+                    <ul className={styles.modalStack}>
+                      {activeProject.stack.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={styles.detailBlock}>
+                    <h4>Role / Work done</h4>
+                    <p>{activeProject.role}</p>
+                  </div>
+
+                  <div className={styles.detailBlock}>
+                    <h4>Published</h4>
+                    <p>{activeProject.publishedDate}</p>
+                  </div>
+
+                  <Button
+                    href={activeProject.url}
+                    icon={<Icon name="arrow-circle-up-right" />}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="dark"
+                  >
+                    Open project
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>,
+          portalElement,
+        )
+      : null;
 
   return (
     <section className={`${styles.section} ${isFeatured ? styles.featured : styles.allProjects}`} id="projects">
@@ -129,104 +237,7 @@ export function ProjectsSection({ projects, variant = "featured" }: ProjectsSect
         </div>
       </div>
 
-      {activeProject ? (
-        <div className={styles.overlay} onMouseDown={closeProject}>
-          <div
-            className={styles.modal}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="project-modal-title"
-            onMouseDown={(event) => event.stopPropagation()}
-          >
-            <div className={styles.modalTop}>
-              <p>Project detail</p>
-              <button
-                ref={closeButtonRef}
-                className={styles.closeButton}
-                type="button"
-                onClick={closeProject}
-                aria-label="Close project details"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-
-            <div className={styles.modalGrid}>
-              <aside className={styles.modalMedia}>
-                <span className={`${styles.imageFrame} ${styles.modalImageFrame}`}>
-                  <Image
-                    src={assetPath(activeProject.image)}
-                    alt={`${activeProject.title} preview`}
-                    fill
-                    sizes="(max-width: 64rem) 100vw, 46vw"
-                    className={styles.modalImage}
-                    unoptimized
-                  />
-                </span>
-                <a
-                  className={styles.ogPreview}
-                  href={activeProject.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Open ${activeProject.title}`}
-                >
-                  <span className={styles.ogThumb} aria-hidden="true">
-                    {ogImage ? (
-                      <Image
-                        src={assetPath(ogImage)}
-                        alt=""
-                        fill
-                        sizes="7rem"
-                        className={styles.ogImage}
-                        unoptimized
-                      />
-                    ) : null}
-                  </span>
-                  <span>
-                    <strong>{activeProject.og.title}</strong>
-                    <small>{activeProject.og.description}</small>
-                    <em>{activeProject.og.url}</em>
-                  </span>
-                </a>
-              </aside>
-
-              <div className={styles.modalContent}>
-                <h3 id="project-modal-title">{activeProject.title}</h3>
-                <p>{activeProject.description}</p>
-
-                <div className={styles.detailBlock}>
-                  <h4>Stack</h4>
-                  <ul className={styles.modalStack}>
-                    {activeProject.stack.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className={styles.detailBlock}>
-                  <h4>Role / Work done</h4>
-                  <p>{activeProject.role}</p>
-                </div>
-
-                <div className={styles.detailBlock}>
-                  <h4>Published</h4>
-                  <p>{activeProject.publishedDate}</p>
-                </div>
-
-                <Button
-                  href={activeProject.url}
-                  icon={<Icon name="arrow-circle-up-right" />}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant="dark"
-                >
-                  Open project
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {modal}
     </section>
   );
 }

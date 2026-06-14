@@ -79,11 +79,6 @@ body.modal-open {
   overflow: hidden;
 }
 
-body.modal-open > header {
-  z-index: 0;
-  pointer-events: none;
-}
-
 a {
   color: inherit;
   text-decoration: none;
