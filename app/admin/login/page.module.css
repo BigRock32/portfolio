@@ -1,0 +1,64 @@
+.page {
+   min-height: 100dvh;
+   display: grid;
+   place-items: center;
+   padding: 2rem;
+}
+
+.card {
+   display: grid;
+   width: min(100%, 28rem);
+   gap: 1.5rem;
+   border: 0.0625rem solid var(--line);
+   border-radius: 1.5rem;
+   background: rgba(255, 255, 255, 0.82);
+   padding: 2rem;
+   box-shadow: var(--shadow);
+}
+
+.eyebrow {
+   margin: 0 0 0.5rem;
+   color: var(--muted);
+   font-size: 0.875rem;
+   font-weight: 700;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+}
+
+.card h1 {
+   margin: 0;
+   font-size: 2rem;
+   line-height: 1.1;
+}
+
+.description {
+   margin: 0.75rem 0 0;
+   color: var(--muted);
+   font-size: 1rem;
+   line-height: 1.4;
+}
+
+.field {
+   display: grid;
+   gap: 0.5rem;
+}
+
+.field span {
+   font-size: 0.875rem;
+   font-weight: 700;
+}
+
+.field input {
+   width: 100%;
+   border: 0.0625rem solid var(--line);
+   border-radius: var(--radius);
+   background: #ffffff;
+   padding: 0.85rem 1rem;
+   color: var(--text);
+}
+
+.error {
+   margin: -0.5rem 0 0;
+   color: #b42318;
+   font-size: 0.875rem;
+}

@@ -4,8 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Icon, type IconName } from "@/components/Icon";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import ogCache from "@/data/og-cache.json";
-import { projects, type Project } from "@/data/projects";
+import { getFeaturedProjects } from "@/lib/projects";
 import { assetPath } from "@/lib/assetPath";
 import styles from "./page.module.css";
 
@@ -26,22 +25,9 @@ const socials: Array<{ label: string; value: string; href: string; icon: IconNam
   },
 ];
 
-const featuredProjectIds = ["sdi", "dune", "bd-emerson", "flower-ai", "lingo"];
+export default async function Home() {
+  const featuredProjects = await getFeaturedProjects();
 
-const ogCacheByProject = ogCache as Record<string, Partial<Project["og"]>>;
-const projectsWithOg = projects.map((project) => ({
-  ...project,
-  og: {
-    ...project.og,
-    ...ogCacheByProject[project.id],
-  },
-}));
-
-const featuredProjects = featuredProjectIds
-  .map((id) => projectsWithOg.find((project) => project.id === id))
-  .filter((project): project is Project => Boolean(project));
-
-export default function Home() {
   return (
     <>
       <Header />
