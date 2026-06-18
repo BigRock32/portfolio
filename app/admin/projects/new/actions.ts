@@ -12,6 +12,7 @@ import {
    requireText,
    getText
 } from "@/lib/admin-project-form";
+import { revalidatePath } from "next/cache";
 
 export async function createProject(formData: FormData) {
    if (!(await isAdminAuthenticated())) {
@@ -52,6 +53,10 @@ export async function createProject(formData: FormData) {
    if (error) {
       throw new Error(error.message);
    }
+
+   revalidatePath("/");
+   revalidatePath("/projects");
+   revalidatePath("/admin/projects");
 
    redirect(`/admin/projects/${data.id}`);
 }

@@ -12,6 +12,7 @@ import {
    requireText,
    getText
 } from "@/lib/admin-project-form";
+import { revalidatePath } from "next/cache";
 
 
 export async function updateProject(projectId: string, formData: FormData) {
@@ -56,6 +57,10 @@ export async function updateProject(projectId: string, formData: FormData) {
       throw new Error(error.message);
    }
 
+   revalidatePath("/");
+   revalidatePath("/projects");
+   revalidatePath("/admin/projects");
+
    redirect("/admin/projects");
 }
 
@@ -71,6 +76,10 @@ export async function deleteProject(projectId: string) {
    if (error) {
       throw new Error(error.message);
    }
+
+   revalidatePath("/");
+   revalidatePath("/projects");
+   revalidatePath("/admin/projects");
 
    redirect("/admin/projects");
 }
