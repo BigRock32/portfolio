@@ -25,7 +25,8 @@ export default async function AdminProjectsPage() {
    const { data: projects, error } = await supabase
       .from("projects")
       .select("id, slug, title, is_published, is_featured, sort_order, updated_at")
-      .order("sort_order", { ascending: true });
+      .order("sort_order", { ascending: true })
+      .order("updated_at", { ascending: true });
 
    if (error) {
       throw new Error(error.message);

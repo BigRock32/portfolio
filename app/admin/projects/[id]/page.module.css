@@ -80,6 +80,19 @@
    font: inherit;
 }
 
+.section .fieldInvalid input,
+.section .fieldInvalid textarea,
+.fileField:has(.fieldError) input[type="file"] {
+   border-color: #b42318;
+}
+
+.fieldError {
+   color: #b42318;
+   font-size: 0.8125rem;
+   font-weight: 700;
+   line-height: 1.35;
+}
+
 .section textarea {
    resize: vertical;
 }

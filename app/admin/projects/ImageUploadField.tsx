@@ -7,15 +7,19 @@ import styles from "./[id]/page.module.css";
 type ImageUploadFieldProps = {
    currentImageUrl?: string | null;
    currentImageAlt?: string;
+   error?: string;
    inputLabel?: string;
    inputRequired?: boolean;
+   onFileChange?: () => void;
 };
 
 export function ImageUploadField({
    currentImageUrl,
    currentImageAlt = "Current project image",
+   error,
    inputLabel = "Image",
    inputRequired = false,
+   onFileChange,
 }: ImageUploadFieldProps) {
    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
@@ -59,8 +63,10 @@ export function ImageUploadField({
                   }
 
                   setPreviewUrl(file ? URL.createObjectURL(file) : null);
+                  onFileChange?.();
                }}
             />
+            {error ? <small className={styles.fieldError}>{error}</small> : null}
          </label>
 
          {previewUrl ? (

@@ -25,6 +25,12 @@ export function getNumber(formData: FormData, key: string) {
   return Number.isFinite(value) ? value : 0;
 }
 
+export function getNullableDate(formData: FormData, key: string) {
+  const value = getText(formData, key);
+
+  return value.length > 0 ? value : null;
+}
+
 export function requireText(formData: FormData, key: string, label: string) {
   const value = getText(formData, key);
 

@@ -5,6 +5,7 @@ import { isAdminAuthenticated } from "@/lib/admin-auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 
 import {
+   getNullableDate,
    getNullableText,
    getNumber,
    getProjectImageUrl,
@@ -44,7 +45,7 @@ export async function updateProject(projectId: string, formData: FormData) {
          og_description: getNullableText(formData, "og_description"),
          og_image: getNullableText(formData, "og_image"),
          og_url: getNullableText(formData, "og_url"),
-         published_date: getNullableText(formData, "published_date"),
+         published_date: getNullableDate(formData, "published_date"),
          sort_order: getNumber(formData, "sort_order"),
          is_published: formData.get("is_published") === "on",
          is_featured: formData.get("is_featured") === "on",
