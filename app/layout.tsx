@@ -3,9 +3,17 @@ import { assetPath } from "@/lib/assetPath";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vasilii | Webflow / JavaScript Developer",
+  title: "Vasilii | Webflow / Frontend Developer",
   description:
-    "Portfolio of Vasilii, a remote Webflow and JavaScript developer building fast marketing sites, automations, and custom integrations.",
+    "Portfolio of Vasilii, a remote Webflow and Frondend developer building fast marketing sites, automations, and custom integrations.",
+  openGraph: {
+    images: [{
+      url: "/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "vaska-dev",
+    }]
+  }
 };
 
 export default function RootLayout({

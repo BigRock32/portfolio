@@ -6,6 +6,7 @@ export type IconName =
   | "arrow-right"
   | "arrow-up"
   | "arrow-up-right"
+  | "calendar-plus"
   | "category"
   | "download"
   | "external-link"
@@ -26,6 +27,7 @@ const iconSources: Record<IconName, string> = {
   "arrow-right": "/icons/arrow-narrow-right.svg",
   "arrow-up": "/icons/footer-arrow-up.svg",
   "arrow-up-right": "/icons/arrow-narrow-up-right.svg",
+  "calendar-plus": "/icons/calendar-plus-02.svg",
   category: "/icons/category.svg",
   download: "/icons/download-04.svg",
   "external-link": "/icons/link-external-01.svg",
