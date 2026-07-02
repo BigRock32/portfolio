@@ -35,18 +35,10 @@ export function Footer() {
         </div>
 
         <div className={styles.footerContact}>
-          <div className={styles.footerSchedule}>
-            <a className={styles.footerScheduleLink} href="mailto:vasya.samarin.00@gmail.com">
-              Schedule a free consultation
-            </a>
-            <a
-              className={styles.footerScheduleIcon}
-              href="mailto:vasya.samarin.00@gmail.com"
-              aria-label="Schedule a free consultation"
-            >
-              <Icon name="external-link" />
-            </a>
-          </div>
+          <a className={styles.footerScheduleButton} href="mailto:vasya.samarin.00@gmail.com">
+            <span>Schedule a free consultation</span>
+            <Icon name="calendar-plus" />
+          </a>
           <span className={styles.footerLine} aria-hidden="true" />
           <div className={styles.footerSocials} aria-label="Social links">
             {socials.map((social) => (

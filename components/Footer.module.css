@@ -84,42 +84,33 @@
   margin-top: 2.5rem;
 }
 
-.footerSchedule {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.footerScheduleLink {
+.footerScheduleButton {
   display: inline-flex;
-  min-width: 17.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 0.125rem solid rgba(26, 26, 26, 0.72);
-  color: var(--muted);
-  font-size: 1.125rem;
-  line-height: 1.28;
-}
-
-.footerScheduleIcon {
-  display: inline-grid;
-  width: 3.5rem;
-  height: 3.5rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  background: #000000;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  border: 0.0625rem solid var(--text);
+  border-radius: 0.5rem;
+  background: var(--text);
   color: #ffffff;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
   transition:
     background-color 160ms ease,
+    border-color 160ms ease,
     transform 160ms ease;
 }
 
-.footerScheduleIcon:hover {
+.footerScheduleButton:hover {
+  border-color: #2d2d2d;
   background: #2d2d2d;
   transform: translateY(-0.0625rem);
 }
 
-.footerScheduleIcon img {
+.footerScheduleButton img {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -236,12 +227,7 @@
     display: none;
   }
 
-  .footerActions,
-  .footerSchedule {
+  .footerActions {
     align-items: center;
-  }
-
-  .footerScheduleLink {
-    min-width: 0;
   }
 }
