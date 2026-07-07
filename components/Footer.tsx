@@ -23,11 +23,6 @@ export function Footer() {
             <p>Clean frontend development, scalable CMS systems, and practical automations</p>
           </div>
           <div className={styles.footerActions}>
-            <nav className={styles.footerNav} aria-label="Footer navigation">
-              <a href={assetPath("/#projects")}>Projects</a>
-              <a href={assetPath("/#about")}>About</a>
-              <a href={assetPath("/#contacts")}>Contacts</a>
-            </nav>
             <a className={styles.footerCircle} href="#" aria-label="Back to top">
               <Icon name="arrow-up" />
             </a>
@@ -52,11 +47,6 @@ export function Footer() {
         <div className={styles.footerBottom}>
           <span>© 2026 Samarin Vasilii</span>
           <span>Handcrafted with <a href="https://www.linkedin.com/in/alevtinka">Alevtinka</a></span>
-          {/* <span className={styles.legalLinks}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookies Settings</a>
-          </span> */}
         </div>
       </div>
     </footer>

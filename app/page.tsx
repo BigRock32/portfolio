@@ -37,11 +37,9 @@ export default async function Home() {
             <div className={styles.heroGrid}>
               <div className={styles.heroContent}>
                 <p className={styles.heroIntro}>Hi, I&apos;m Vasilii</p>
-                <h1>Senior Webflow/Frontend developer</h1>
+                <h1>Senior Webflow and<br/>Frontend developer</h1>
                 <p className={styles.lead}>
-                  with 5 years of experience. I create clean and scalable Webflow experiences with
-                  custom JavaScript, thoughtful CMS architecture, smooth interactions, automations,
-                  and integrations that help teams work more efficiently
+                  with 5 years of experience. I build scalable Webflow websites with custom JavaScript, CMS and automations that streamline workflows
                 </p>
                 <div className={styles.actions} aria-label="Primary actions">
                   <Button href="mailto:vasya.samarin.00@gmail.com" minWidth="6.75rem" variant="primary">

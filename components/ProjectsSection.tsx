@@ -47,12 +47,12 @@ function ProjectCard({ project, layout, onOpen }: ProjectCardProps) {
         </span>
 
         <span className={styles.cardText}>
-          <span className={styles.cardTitleRow}>
+          <h2 className={styles.cardTitleRow}>
             <strong>{project.title}</strong>
             <span className={styles.viewButton}>
               <Icon name="arrow-right" />
             </span>
-          </span>
+          </h2>
           <span className={styles.cardSummary}>{project.summary}</span>
         </span>
       </button>
