@@ -418,6 +418,31 @@
   overflow-wrap: anywhere;
 }
 
+.projectsSwitch {
+  display: flex;
+  padding: 0.5rem;
+  background-color: var(--accent);
+  border-radius: var(--radius-medium);
+}
+
+.projectsSwitchBtn {
+  font-family: var(--font-display);
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--surface);
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  line-height: 1;
+}
+
+.projectsSwitchBtn.isActive {
+  color: var(--accent-dark);
+  background-color: var(--surface);
+}
+
 @media (max-width: 480px) {
   .container {
     width: min(100% - 2rem, var(--container));

@@ -17,6 +17,7 @@
   --focus: #1a1a1a;
   --shadow: 0 1.5rem 4rem rgba(26, 26, 26, 0.08);
   --radius: 0.5rem;
+  --radius-medium: 0.75rem;
   --container: 84.5rem;
   --font-display: "Funnel Display", Inter, ui-sans-serif, system-ui, sans-serif;
   --font-ui: "Onest", Inter, ui-sans-serif, system-ui, sans-serif;

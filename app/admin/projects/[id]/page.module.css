@@ -70,6 +70,7 @@
 }
 
 .section input,
+.section select,
 .section textarea {
    width: 100%;
    border: 0.0625rem solid var(--line);
@@ -80,7 +81,19 @@
    font: inherit;
 }
 
+.section select {
+   appearance: none;
+   background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+      linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+   background-position: calc(100% - 1.2rem) 50%, calc(100% - 0.9rem) 50%;
+   background-repeat: no-repeat;
+   background-size: 0.35rem 0.35rem, 0.35rem 0.35rem;
+   padding-right: 2.75rem;
+   cursor: pointer;
+}
+
 .section .fieldInvalid input,
+.section .fieldInvalid select,
 .section .fieldInvalid textarea,
 .fileField:has(.fieldError) input[type="file"] {
    border-color: #b42318;

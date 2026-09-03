@@ -8,6 +8,7 @@ export type Project = {
   role: string;
   publishedDate: string;
   url: string;
+  category: string;
   og: {
     title: string;
     description: string;
@@ -28,6 +29,7 @@ export const projects: Project[] = [
     role: "Webflow/Frontend Developer",
     publishedDate: "May 4, 2026",
     url: "https://dune.security",
+    category: 'webflow',
     og: {
       title: "AI-Driven User Risk Management - Dune Security",
       description: "AI-driven user risk management platform for security teams.",
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     role: "Webflow/Frontend Developer",
     publishedDate: "May 4, 2026",
     url: "https://floweraipeople.com",
+    category: 'webflow',
     og: {
       title: "Flower AI",
       description: "Frontend, CMS architecture, integrations, sliders, and GSAP animations.",
@@ -62,6 +65,7 @@ export const projects: Project[] = [
     role: "Webflow Team Lead/Developer",
     publishedDate: "May 4, 2026",
     url: "https://sdipresence.com",
+    category: 'webflow',
     og: {
       title: "IT Modernization & Managed Services Provider | SDI Presence",
       description:
@@ -80,6 +84,7 @@ export const projects: Project[] = [
     role: "Webflow Team Lead/Developer",
     publishedDate: "May 4, 2026",
     url: "https://bdemerson.com",
+    category: 'webflow',
     og: {
       title: "bdemerson.com",
       description: "CMS architecture, style system, custom JavaScript, and Webflow implementation support.",
@@ -97,6 +102,7 @@ export const projects: Project[] = [
     role: "Webflow Developer",
     publishedDate: "May 5, 2026",
     url: "https://droneshowsoftware.com",
+    category: 'webflow',
     og: {
       title: "Drone Show Software: The #1 Solution for Drone Light Shows",
       description:
@@ -115,6 +121,7 @@ export const projects: Project[] = [
     role: "Webflow/JS Developer",
     publishedDate: "May 4, 2026",
     url: "https://jonnydo.com",
+    category: 'webflow',
     og: {
       title: "JonnyDo",
       description: "Webflow membership flow with quiz logic and Stripe checkout routing.",
@@ -132,6 +139,7 @@ export const projects: Project[] = [
     role: "Webflow Developer",
     publishedDate: "May 5, 2026",
     url: "https://globalfasttrack.hk",
+    category: 'webflow',
     og: {
       title: "globalfasttrack.hk",
       description: "Webflow pages, components, CMS collections, and CRM integrations for event-driven updates.",
@@ -149,6 +157,7 @@ export const projects: Project[] = [
     role: "Webflow Developer",
     publishedDate: "May 5, 2026",
     url: "https://fintechweek.hk",
+    category: 'webflow',
     og: {
       title: "Hong Kong FinTech Week x StartmeupHK",
       description:
@@ -167,6 +176,7 @@ export const projects: Project[] = [
     role: "Frontend Developer",
     publishedDate: "May 4, 2026",
     url: "https://lingoai.ru",
+    category: 'webflow',
     og: {
       title: "LINGO - service for generating marketplace copy",
       description: "Service for generating marketplace product descriptions.",
@@ -184,6 +194,7 @@ export const projects: Project[] = [
     role: "Webflow Developer",
     publishedDate: "May 5, 2026",
     url: "https://kt-team.ru",
+    category: 'webflow',
     og: {
       title: "Optimization and automation of business processes with KT.Team",
       description:
@@ -202,6 +213,7 @@ export const projects: Project[] = [
     role: "Webflow Developer/JS Developer",
     publishedDate: "May 4, 2026",
     url: "https://bothelp.io",
+    category: 'webflow',
     og: {
       title: "BotHelp pricing | Chatbot and AI agent builder pricing",
       description:
@@ -220,6 +232,7 @@ export const projects: Project[] = [
     role: "Webflow Developer",
     publishedDate: "Dec 5, 2022",
     url: "https://greenway.ru",
+    category: 'webflow',
     og: {
       title: "Greenway",
       description: "Logistics company website for transportation services and order placement.",
@@ -237,6 +250,7 @@ export const projects: Project[] = [
     role: "Webflow Developer",
     publishedDate: "Dec 5, 2022",
     url: "https://stu.proaktive.ru",
+    category: 'webflow',
     og: {
       title: "Proactive - Fire safety company",
       description: "Website showcasing the services and expertise of a fire safety company.",

@@ -47,6 +47,7 @@ export async function updateProject(projectId: string, formData: FormData) {
          og_url: getNullableText(formData, "og_url"),
          published_date: getNullableDate(formData, "published_date"),
          sort_order: getNumber(formData, "sort_order"),
+         category: getText(formData, "category"),
          is_published: formData.get("is_published") === "on",
          is_featured: formData.get("is_featured") === "on",
       })

@@ -1,6 +1,12 @@
 "use client";
 
-import type { ChangeEventHandler, InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+import type {
+  ChangeEventHandler,
+  InputHTMLAttributes,
+  ReactNode,
+  SelectHTMLAttributes,
+  TextareaHTMLAttributes,
+} from "react";
 import styles from "./[id]/page.module.css";
 
 type FieldProps = {
@@ -51,6 +57,27 @@ export function TextArea({ error, label, onValueChange, ...props }: TextAreaProp
   return (
     <Field error={error} label={label}>
       <textarea {...props} onChange={handleChange} />
+    </Field>
+  );
+}
+
+type SelectFieldProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange" | "onInput"> & {
+  children: ReactNode;
+  error?: string;
+  label: string;
+  onValueChange?: (value: string) => void;
+};
+
+export function SelectField({ children, error, label, onValueChange, ...props }: SelectFieldProps) {
+  const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
+    onValueChange?.(event.currentTarget.value);
+  };
+
+  return (
+    <Field error={error} label={label}>
+      <select {...props} onChange={handleChange}>
+        {children}
+      </select>
     </Field>
   );
 }

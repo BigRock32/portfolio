@@ -19,6 +19,7 @@ type ProjectRow = {
   sort_order: number;
   is_published: boolean;
   is_featured: boolean;
+  category: string;
 };
 
 function formatDate(date: string | null) {
@@ -45,6 +46,7 @@ function mapProjectRow(row: ProjectRow): Project {
     role: row.role,
     publishedDate: formatDate(row.published_date),
     url: row.url ?? "",
+    category: row.category,
     og: {
       title: row.og_title ?? row.title,
       description: row.og_description ?? row.summary,
@@ -77,6 +79,7 @@ async function getPublishedProjectRows() {
         "sort_order",
         "is_published",
         "is_featured",
+        "category",
       ].join(","),
     )
     .eq("is_published", true)

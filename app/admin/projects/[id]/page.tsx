@@ -31,6 +31,7 @@ type ProjectRow = {
    sort_order: number;
    is_published: boolean;
    is_featured: boolean;
+   category: string;
 };
 
 export default async function EditProjectPage({ params }: EditProjectPageProps) {
@@ -44,7 +45,7 @@ export default async function EditProjectPage({ params }: EditProjectPageProps) 
    const { data, error } = await supabase
       .from("projects")
       .select(
-         "id, slug, title, summary, description, role, url, image_url, stack, og_title, og_description, og_image, og_url, published_date, sort_order, is_published, is_featured",
+         "id, slug, title, summary, description, role, url, image_url, stack, og_title, og_description, og_image, og_url, published_date, sort_order, is_published, is_featured, category",
       )
       .eq("id", id)
       .single();

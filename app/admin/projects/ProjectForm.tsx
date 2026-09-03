@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Button";
-import { CheckboxField, TextArea, TextInput } from "./ProjectFormFields";
+import { CheckboxField, SelectField, TextArea, TextInput } from "./ProjectFormFields";
 import { ImageUploadField } from "./ImageUploadField";
 import styles from "./[id]/page.module.css";
+import { PROJECT_CATEGORIES } from "@/lib/project-categories";
 
 type ProjectFormAction = (formData: FormData) => void | Promise<void>;
 
@@ -25,9 +26,10 @@ type EditableProject = {
   summary: string;
   title: string;
   url: string | null;
+  category: string;
 };
 
-type FormErrors = Partial<Record<"description" | "image_file" | "slug" | "title", string>>;
+type FormErrors = Partial<Record<"description" | "image_file" | "slug" | "title" | "category", string>>;
 
 type ProjectFormProps = {
   action: ProjectFormAction;
@@ -72,6 +74,10 @@ export function ProjectForm({ action, defaultSortOrder = 0, mode, project }: Pro
 
     if (!String(formData.get("description") ?? "").trim()) {
       nextErrors.description = "Project description is required.";
+    }
+
+    if (!String(formData.get("category") ?? "").trim()) {
+      nextErrors.category = "Project category is required.";
     }
 
     const imageFile = formData.get("image_file");
@@ -150,6 +156,24 @@ export function ProjectForm({ action, defaultSortOrder = 0, mode, project }: Pro
           rows={8}
           onValueChange={() => clearError("description")}
         />
+
+        <SelectField
+          defaultValue={project?.category ?? ""}
+          error={errors.category}
+          label="Choose category"
+          name="category"
+          required
+          onValueChange={() => clearError("category")}
+        >
+          <option value="" disabled>
+            Select category
+          </option>
+          {PROJECT_CATEGORIES.map((category) => (
+            <option key={category.value} value={category.value}>
+              {category.label}
+            </option>
+          ))}
+        </SelectField>
 
         <TextInput defaultValue={project?.role ?? ""} label="Role" name="role" />
         <TextInput defaultValue={project?.url ?? ""} label="Project URL" name="url" />
