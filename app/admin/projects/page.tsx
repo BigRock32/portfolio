@@ -9,6 +9,7 @@ type ProjectRow = {
    id: string;
    slug: string;
    title: string;
+   category: string;
    is_published: boolean;
    is_featured: boolean;
    sort_order: number;
